@@ -1,6 +1,4 @@
 # Units Network Testnet
-* Join [here](https://app.units.network/?referral=0xd54ae0024583De18971056236445EACf6eACb25F)
-* Get faucet [here](https://faucet-testnet.unit0.dev/)
 
 ### Install Dependecies
 ```
@@ -17,30 +15,10 @@ sudo apt-get purge nodejs
 sudo apt-get autoremove
 ```
 ```
-sudo dpkg -i --force-overwrite /var/cache/apt/archives/nodejs_18.20.3-1nodesource1_amd64.deb
-```
-```
-sudo rm /etc/apt/keyrings/nodesource.gpg
-sudo rm /etc/apt/sources.list.d/nodesource.list
-```
-```
-NODE_MAJOR=18
-```
-```
-sudo apt-get update
-sudo apt-get install -y ca-certificates curl gnupg
-sudo mkdir -p /etc/apt/keyrings
-```
-```
-curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
-```
-```
-echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_${NODE_MAJOR}.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
-```
-```
-sudo apt-get update
-sudo apt-get install -y nodejs
-```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+source ~/.bashrc
+nvm install node
+nvm install-latest-npm
 ```
 node --version
 ```
