@@ -35,8 +35,7 @@ nano unitstx.js
 ```
 * Copy & Paste the entire code below in the file
 * No need to change anything
-```console
-const readline = require('readline');
+```const readline = require('readline');
 const Web3 = require('web3');
 
 const rl = readline.createInterface({
@@ -63,7 +62,7 @@ rl.question('Enter your private key: ', (privateKey) => {
           return Math.floor(Math.random() * (max - min + 1) + min);
         }
 
-        function sendTransaction() {
+        async function sendTransaction() {
           const amount = getRandomAmount(minAmount, maxAmount);
           const interval = getRandomInterval(minInterval, maxInterval);
 
@@ -71,12 +70,15 @@ rl.question('Enter your private key: ', (privateKey) => {
           web3.eth.accounts.wallet.add(account);
           web3.eth.defaultAccount = account.address;
 
+          const nonce = await web3.eth.getTransactionCount(web3.eth.defaultAccount, 'latest');
+
           const tx = {
             from: web3.eth.defaultAccount,
             to: toAddress,
             value: web3.utils.toWei(amount, 'ether'),
             gas: 21000,
             gasPrice: web3.utils.toWei('1', 'gwei'),
+            nonce: nonce,
             chainId: 88817
           };
 
@@ -98,6 +100,7 @@ rl.question('Enter your private key: ', (privateKey) => {
     });
   });
 });
+
 
 ```
 > `Ctrl + X` `Y` `Enter`
