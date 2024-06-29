@@ -117,3 +117,4 @@ node unitstx.js
 * Enter Receipt Address: a random 0x.. address
 * Enter a range of Amount of the tokens you want to send: 0.0000001,0.00002
 * Enter a range of delays between txs in seconds: 8,10
+* Each transaction will have an increasing number of nonces, ensuring that transactions are sent sequentially and without nonce conflicts.
