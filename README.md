@@ -20,8 +20,11 @@ source ~/.bashrc
 nvm install node
 nvm install-latest-npm
 ```
+
+```
 node --version
 ```
+
 ```
 npm install -g npm@10.8.1
 ```
