@@ -38,8 +38,8 @@ nano unitstx.js
 ```
 * Copy & Paste the entire code below in the file
 * No need to change anything
-```const readline = require('readline');
-const Web3 = require('web3');
+```const Web3 = require('web3');
+const readline = require('readline');
 
 const rl = readline.createInterface({
   input: process.stdin,
