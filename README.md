@@ -38,8 +38,8 @@ nano unitstx.js
 ```
 * Copy & Paste the entire code below in the file
 * No need to change anything
-```const Web3 = require('web3');
-const readline = require('readline');
+```const readline = require('readline');
+const Web3 = require('web3'); // Add this line to import Web3
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -103,7 +103,6 @@ rl.question('Enter your private key: ', (privateKey) => {
     });
   });
 });
-
 
 ```
 > `Ctrl + X` `Y` `Enter`
